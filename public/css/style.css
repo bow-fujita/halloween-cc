@@ -1,0 +1,43 @@
+/**
+ * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ */
+
+body#register-page {
+  margin-top: 30px;
+  background-color: purple;
+}
+
+#register-page .jumbotron {
+  padding-top: 10px;
+}
+
+#register-page .title {
+  color: orange;
+  text-align: center;
+}
+
+#register-form input[type='text'] {
+  margin: 20px 0;
+}
+
+#register-form .required {
+  color: red;
+  margin-left: .25em;
+}
+
+#register-form .check-in {
+  text-align: center;
+}
+
+#register-done {
+  text-align: center;
+}
+
+#register-done .entry-number {
+  font-size: 72pt;
+  border: solid 5px orange;
+  border-radius: 30px;
+  width: 240px;
+  margin: 0 auto 20px;
+}
+

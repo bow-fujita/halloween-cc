@@ -1,0 +1,6 @@
+--ui bdd
+--reporter list
+--require should
+--timeout 3000
+--slow 1000
+--exit

@@ -1,0 +1,60 @@
+{
+  "name": "halloween-cc",
+  "version": "1.0.18",
+  "description": "Application for Halloween Costume Contest takes place at Strawberry Park Shopping Center.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "make check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bow-fujita/halloween-cc.git"
+  },
+  "author": {
+    "name": "Hiro Fujita",
+    "email": "bow.fujita@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bow-fujita/halloween-cc/issues"
+  },
+  "homepage": "https://github.com/bow-fujita/halloween-cc",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "config": "^2.0.1",
+    "ejs": "^2.6.1",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.3",
+    "express-ejs-layouts": "^2.5.0",
+    "exprest4": "^1.2.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "sqlite3": "^4.0.2",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-notify": "^3.1.3",
+    "cheerio": "^1.0.0-rc.2",
+    "css-loader": "^1.0.0",
+    "gasparesganga-jquery-loading-overlay": "^2.1.6",
+    "istanbul": "^0.4.5",
+    "jquery": "^3.3.1",
+    "mocha": "^5.2.0",
+    "popper.js": "^1.14.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "should": "^13.2.3",
+    "style-loader": "^0.23.1",
+    "supertest": "^3.3.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
