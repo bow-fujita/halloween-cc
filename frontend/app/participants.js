@@ -7,9 +7,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
+import Button from 'react-bootstrap/lib/Button';
+import {
+  FaSync
+, FaThumbsUp
+, FaTrash
+} from 'react-icons/fa';
 
 import Header from './header';
-import Button from './button';
 import Table from './table';
 import Ajax from './ajax';
 
@@ -31,10 +36,9 @@ class ParticipantRow extends React.Component
 
   render() {
     const data = this.props.data
-        , onClickDelete = this.onClickDelete.bind(this)
         , onClickScore = () => location.href = `${document.baseURI}score/${data.id}`
         , score = data.score ||
-                  <Button.Glyphicon onClick={onClickScore} glyph='thumbs-up' />;
+                  <Button children={<FaThumbsUp />} onClick={onClickScore} />;
 
     return (
       <tr>
@@ -44,7 +48,8 @@ class ParticipantRow extends React.Component
         <td>{data.message}</td>
         <td className='text-right'>{score}</td>
         <td className='text-right'>
-          <Button.Delete onClick={onClickDelete} />
+          <Button children={<FaTrash />}
+                  onClick={this.onClickDelete.bind(this)} />
         </td>
       </tr>
     );
@@ -94,7 +99,8 @@ class ParticipantsTable extends React.Component
               <th className='col-xs-3'>Message</th>
               <th className='col-xs-1 text-right'>Score</th>
               <th className='col-xs-1 text-right'>
-                <Button.Refresh onClick={me.loadAll.bind(me)} />
+                <Button children={<FaSync />}
+                        onClick={me.loadAll.bind(me)} />
               </th>
             </tr>
           )

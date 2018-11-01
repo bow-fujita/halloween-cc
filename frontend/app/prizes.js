@@ -7,9 +7,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
+import Button from 'react-bootstrap/lib/Button';
+import {
+  FaCheck
+, FaEdit
+, FaPlus
+, FaTimes
+, FaTrash
+} from 'react-icons/fa';
 
 import Header from './header';
-import Button from './button';
 import Form from './form';
 import Table from './table';
 import Ajax from './ajax';
@@ -35,18 +42,16 @@ class PrizeRow extends React.Component
   }
 
   render() {
-    const data = this.props.data
-        , onClickEdit = this.onClickEdit.bind(this)
-        , onClickDelete = this.onClickDelete.bind(this);
-
     return (
       <tr>
-        <td>{data.sponsor}</td>
-        <td>{data.item}</td>
-        <td>{data.quantity}</td>
+        <td>{this.props.data.sponsor}</td>
+        <td>{this.props.data.item}</td>
+        <td>{this.props.data.quantity}</td>
         <td className='text-right'>
-          <Button.Edit onClick={onClickEdit} />
-          <Button.Delete onClick={onClickDelete} />
+          <Button children={<FaEdit />}
+                  onClick={this.onClickEdit.bind(this)} />
+          <Button children={<FaTrash />}
+                  onClick={this.onClickDelete.bind(this)} />
         </td>
       </tr>
     );
@@ -161,11 +166,12 @@ class PrizeEditRow extends React.Component
         <td><Form.Input control={control.item} /></td>
         <td><Form.Input control={control.quantity} /></td>
         <td className='text-right'>
-          <Button.Ok bsStyle='success'
-                     disabled={disabled}
-                     onClick={this.onOk.bind(this)}
-          />
-          <Button.Cancel onClick={this.onCancel.bind(this)} />
+          <Button children={<FaCheck />}
+                  bsStyle='success'
+                  disabled={disabled}
+                  onClick={this.onOk.bind(this)} />
+          <Button children={<FaTimes />}
+                  onClick={this.onCancel.bind(this)} />
         </td>
       </tr>
     );
@@ -233,7 +239,8 @@ class PrizesTable extends React.Component
               <th className='col-xs-4'>Item</th>
               <th className='col-xs-2'>Quantity</th>
               <th className='col-xs-2 text-right'>
-                <Button.New onClick={me.onOpenNewRow.bind(me)} />
+                <Button children={<FaPlus />}
+                        onClick={me.onOpenNewRow.bind(me)} />
               </th>
             </tr>
           )

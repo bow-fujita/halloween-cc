@@ -7,9 +7,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
+import Button from 'react-bootstrap/lib/Button';
+import {
+  FaCheck
+, FaUserPlus
+, FaTimes
+, FaTrash
+} from 'react-icons/fa';
+
 
 import Header from './header';
-import Button from './button';
 import Form from './form';
 import Table from './table';
 import Ajax from './ajax';
@@ -31,12 +38,12 @@ class JudgeRow extends React.Component
   }
 
   render() {
-    const onClickDelete = this.onClickDelete.bind(this);
     return (
       <tr>
         <td>{this.props.data.name}</td>
         <td className='text-right'>
-          <Button.Delete onClick={onClickDelete} />
+          <Button children={<FaTrash />}
+                  onClick={this.onClickDelete.bind(this)} />
         </td>
       </tr>
     );
@@ -83,11 +90,12 @@ class JudgeNewRow extends React.Component
           <Form.Input control={control} />
         </td>
         <td className='text-right'>
-          <Button.Ok bsStyle='success'
-                     disabled={!this.state.name.length}
-                     onClick={this.onOk.bind(this)}
-          />
-          <Button.Cancel onClick={this.onCancel.bind(this)} />
+          <Button children={<FaCheck />}
+                  bsStyle='success'
+                  disabled={!this.state.name.length}
+                  onClick={this.onOk.bind(this)} />
+          <Button children={<FaTimes />}
+                  onClick={this.onCancel.bind(this)} />
         </td>
       </tr>
     );
@@ -140,7 +148,8 @@ class JudgesTable extends React.Component
             <tr>
               <th className='col-xs-10'>Name</th>
               <th className='col-xs-2 text-right'>
-                <Button.New onClick={me.onOpenNewRow.bind(me)} />
+                <Button children={<FaUserPlus />}
+                        onClick={me.onOpenNewRow.bind(me)} />
               </th>
             </tr>
           )

@@ -11,13 +11,17 @@ import {
   Button
 , ButtonGroup
 } from 'react-bootstrap';
-
+import {
+  FaCheck
+, FaChevronLeft
+, FaChevronRight
+, FaList
+} from 'react-icons/fa';
 
 import Header from './header';
 import Table from './table';
 import Ajax from './ajax';
 import Notify from './notify';
-import MyButton from './button';
 
 
 class ScoreRow extends React.Component
@@ -117,8 +121,9 @@ class ScoreTable extends React.Component
               <th className='col-xs-9'>Judge</th>
               <th className='col-xs-3'>
                 Total: {total}&nbsp;
-                <MyButton.Ok disabled={!total}
-                             onClick={this.onSubmit.bind(this)} />
+                <Button children={<FaCheck />}
+                        disabled={!total}
+                        onClick={this.onSubmit.bind(this)} />
               </th>
             </tr>
           )
@@ -163,16 +168,19 @@ class ScorePage extends React.Component
         , title=`#${data.id} - ${data.fullname} (${data.costume})`
         , message = data.message || '-'
         , buttons = [(
-            <MyButton.Prev key='prev'
-                           disabled={!data.prev}
-                           href={`${document.baseURI}score/${data.prev}`} />
+            <Button children={<FaChevronLeft />}
+                    key='prev'
+                    disabled={!data.prev}
+                    href={`${document.baseURI}score/${data.prev}`} />
           ), (
-            <MyButton.List key='list'
-                           href={`${document.baseURI}participants`} />
+            <Button children={<FaList />}
+                    key='list'
+                    href={`${document.baseURI}participants`} />
           ), (
-            <MyButton.Next key='next'
-                           disabled={!data.next}
-                           href={`${document.baseURI}score/${data.next}`} />
+            <Button children={<FaChevronRight />}
+                    key='next'
+                    disabled={!data.next}
+                    href={`${document.baseURI}score/${data.next}`} />
           )];
 
 
