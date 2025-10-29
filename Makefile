@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+# Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
 #
 
 SHELL := /bin/bash
@@ -24,9 +24,11 @@ WEBPACK_CONFIG := webpack.config.js
 .PHONY: bundle
 bundle: $(BUNDLE_JS)
 
-$(BUNDLE_JS): $(WEBPACK_CONFIG) frontend/main.jsx $(wildcard frontend/app/*.js)
+$(BUNDLE_JS): $(NODE_MODULES) $(WEBPACK_CONFIG) frontend/main.jsx $(wildcard frontend/app/*.js)
 	$(WEBPACK) $(WEBPACK_OPTIONS) || rm -f $@
 
+$(NODE_MODULES):
+	npm install
 
 #
 # Unit test
