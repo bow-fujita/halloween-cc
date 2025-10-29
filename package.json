@@ -1,6 +1,6 @@
 {
   "name": "halloween-cc",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Application for Halloween Costume Contest takes place at Strawberry Park Shopping Center.",
   "main": "server.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "exprest4": "^1.2.0",
     "method-override": "^3.0.0",
     "morgan": "^1.9.1",
-    "sqlite3": "^4.0.2",
+    "sqlite3": "^5.1.7",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
