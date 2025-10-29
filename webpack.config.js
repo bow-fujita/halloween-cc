@@ -13,6 +13,7 @@ module.exports = {
 , output: {
     path: path.join(__dirname, 'public', 'js')
   , filename: 'bundle.js'
+  , hashFunction: 'sha256'
   }
 , module: {
     rules: [{
