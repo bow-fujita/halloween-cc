@@ -26,9 +26,9 @@ WEBPACK_CONFIG := webpack.config.js
 bundle: $(BUNDLE_JS)
 
 $(BUNDLE_JS): $(NODE_MODULES) $(WEBPACK_CONFIG) frontend/main.jsx $(wildcard frontend/app/*.js)
-	$(WEBPACK) $(WEBPACK_OPTIONS) || rm -f $@
+	$(WEBPACK) $(WEBPACK_OPTIONS)
 
-$(NODE_MODULES):
+$(NODE_MODULES): package.json
 	npm install
 
 #
