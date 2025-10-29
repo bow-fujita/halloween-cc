@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -182,4 +182,4 @@ class JudgesPage extends React.Component
   }
 };
 
-module.exports = JudgesPage;
+export default JudgesPage;

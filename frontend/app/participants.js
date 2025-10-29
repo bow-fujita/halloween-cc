@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -129,4 +129,4 @@ class ParticipantsPage extends React.Component
   }
 };
 
-module.exports = ParticipantsPage;
+export default ParticipantsPage;

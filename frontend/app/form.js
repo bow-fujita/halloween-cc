@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -59,6 +59,6 @@ InputForm.propTypes = {
 };
 
 
-module.exports = {
+export default {
   Input: InputForm
 };

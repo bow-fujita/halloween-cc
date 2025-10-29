@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -35,4 +35,4 @@ Header.propTypes = {
 , buttons: PropTypes.arrayOf(PropTypes.element)
 };
 
-module.exports = Header;
+export default Header;

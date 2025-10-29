@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -198,4 +198,4 @@ ScorePage.propTypes = {
   participant: PropTypes.string.isRequired
 };
 
-module.exports = ScorePage;
+export default ScorePage;

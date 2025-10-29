@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -37,7 +37,7 @@ const default_settings = {
       }
 ;
 
-module.exports = {
+export default {
   Success: notify('success')
 , Warning: notify('warning')
 , Danger: notify('danger')

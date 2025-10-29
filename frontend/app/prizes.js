@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -286,4 +286,4 @@ class PrizesPage extends React.Component
   }
 };
 
-module.exports = PrizesPage;
+export default PrizesPage;

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2018 Hiro Fujita <bow.fujita@gmail.com>
+ * Copyright (C) 2018-2025 Hiro Fujita <bow.fujita@gmail.com>
  */
 
 'use strict';
@@ -51,12 +51,14 @@ const fail = (xhr, status) => {
       }
 ;
 
-module.exports = ajax($.ajax);
+const mainAjax = ajax($.ajax);
 
 [
   'getJSON'
 , 'post'
 ]
 .forEach((fn) => {
-  module.exports[fn] = ajax($[fn]);
+  mainAjax[fn] = ajax($[fn]);
 });
+
+export default mainAjax;
