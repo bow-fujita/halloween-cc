@@ -5,6 +5,7 @@
 SHELL := /bin/bash
 
 export NODE_ENV := development
+export NODE_OPTIONS := --openssl-legacy-provider
 
 NODE_MODULES := node_modules
 NODE_MODULES_BIN := $(NODE_MODULES)/.bin
