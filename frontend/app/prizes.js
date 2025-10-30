@@ -35,7 +35,7 @@ class PrizeRow extends React.Component
 
       Ajax({
         method: 'DELETE'
-      , url: `${baseURI}api/prize/${data.id}`
+      , url: `${document.baseURI}api/prize/${data.id}`
       })
       .done(() => onDelete(data.id));
     }
