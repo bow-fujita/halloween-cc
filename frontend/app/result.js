@@ -20,7 +20,7 @@ class ResultRow extends React.Component
     return (
       <tr>
         <td>{data.rank}</td>
-        <td>{data.prize.item} by {data.prize.sponsor}</td>
+        <td>{data.prize}</td>
         <td>{data.score}</td>
         <td>{data.id}</td>
         <td>{data.fullname}</td>
@@ -54,12 +54,14 @@ class ResultTable extends React.Component
         participants.forEach((participant) => {
           if (prizes.length) {
             participant.rank = rank++;
-            participant.prize = _.pick(prizes[0], [ 'sponsor', 'item' ]);
-            results.push(participant);
+            participant.prize = `${prizes[0].item} by ${prizes[0].sponsor}`;
             if (!--prizes[0].quantity) {
               prizes.shift();
             }
+          } else {
+            participant.rank = participant.prize = '-';
           }
+          results.push(participant);
         });
 
         this.setState({ results: results });
