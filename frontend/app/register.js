@@ -108,7 +108,7 @@ class RegDone extends React.Component
         PLEASE KEEP THIS NUMBER:</h3>
         <div className='entry-number'>{this.props.id}</div>
         <Alert bsStyle='danger'>
-          <strong>The contest will begin at 2:30pm here at the Rock Garden.</strong>
+          <strong>Please find the registration staff to receive your registration number tag.</strong>
         </Alert>
         <Button bsStyle='warning' children='O K' onClick={this.props.done} />
       </div>
