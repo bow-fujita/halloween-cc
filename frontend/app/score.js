@@ -103,13 +103,19 @@ class ScoreTable extends React.Component
   }
 
   onSubmit() {
-    const me = this;
+    const participant = this.props.participant;
     Ajax.post(
-      `${document.baseURI}api/participant/score/${this.props.participant}`
+      `${document.baseURI}api/participant/score/${participant.id}`
     , { score: this.getTotal() }
     )
     .done(() => {
-      Notify.Info('Score is successfully updated!');
+      Notify.Info('Score is successfully updated!', {
+        onClosed: () => {
+          if (participant.next) {
+            location.href = `${document.baseURI}score/${participant.next}`;
+          }
+        }
+      });
     });
   }
 
@@ -140,7 +146,7 @@ class ScoreTable extends React.Component
 };
 
 ScoreTable.propTypes = {
-  participant: PropTypes.string.isRequired
+  participant: PropTypes.object.isRequired
 , judges: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
@@ -188,7 +194,7 @@ class ScorePage extends React.Component
       <div className='container'>
         <Header title={title} buttons={buttons} />
         <p><strong>Message:</strong> {message}</p>
-        <ScoreTable participant={this.props.participant} judges={this.state.judges} />
+        <ScoreTable participant={this.state.participant} judges={this.state.judges} />
       </div>
     );
   }
