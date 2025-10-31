@@ -104,8 +104,7 @@ class RegDone extends React.Component
   render() {
     return (
       <div id='register-done'>
-        <h3>Hi {this.props.fullname},<br />
-        PLEASE KEEP THIS NUMBER:</h3>
+        <h3>Hi {this.props.fullname}</h3>
         <div className='entry-number'>{this.props.id}</div>
         <Alert bsStyle='danger'>
           <strong>Please find the registration staff to receive your registration number tag.</strong>
